@@ -1,0 +1,33 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">Prekių sandėlys</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="card mt-3" *ngFor="let category of warehouseData">
+                        <div class="card-header">
+                            {{ category.name }}
+                        </div>
+                        <div class="card-body">
+                            <app-products (orderEmitter)="onOrder($event)" [products]="category.products"></app-products>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 mt-3">
+<div class="card">
+    <div class="card-header">Užsakymai</div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of orders">{{ item }}</li>
+        </ul>
+    </div>
+</div>
+
+</div>

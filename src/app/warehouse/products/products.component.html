@@ -1,0 +1,6 @@
+<ul class="list-group">
+ <li class="list-group-item" *ngFor="let product of products">{{ product.name }}
+
+    <button class="btn btn-success float-end" (click)="order(product.name)">Užsakyti</button>
+ </li>
+</ul>
