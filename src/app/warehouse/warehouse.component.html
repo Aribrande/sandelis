@@ -13,11 +13,25 @@
                             <app-products (orderEmitter)="onOrder($event)" [products]="category.products"></app-products>
                         </div>
                     </div>
+                    <div class="card mt-3">
+                        <div class="card-header">Pridėti naują kategoriją</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Kategorijos pavadinimas</label>
+                                <input type="text" class="form-control" #categoryName>
+                            </div>
+                            <button class="btn btn-success" (click)="addCategory()">Pridėti</button>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </div>
     </div>
+    
+    
+
+
 </div>
 <div class="col-md-12">
     <div class="card">

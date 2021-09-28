@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { warehouseData } from './warehouse.data';
 
 @Component({
@@ -7,6 +7,9 @@ import { warehouseData } from './warehouse.data';
   styleUrls: ['./warehouse.component.css']
 })
 export class WarehouseComponent implements OnInit {
+
+  @ViewChild("categoryName", {static:true}) categoryInput: ElementRef;
+
   warehouseData=warehouseData;
   orders=[];
 
@@ -17,6 +20,14 @@ export class WarehouseComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addCategory(){
+    warehouseData.push({
+      name:this.categoryInput.nativeElement.value,
+      products:[]
+    })
+    
   }
 
 }
